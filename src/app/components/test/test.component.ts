@@ -6,7 +6,7 @@ import { MatSliderModule } from '@angular/material/slider';
   templateUrl: './test.component.html',
   styleUrls: ['./test.component.css'],
   standalone: true,
-  imports: [MatSliderModule],
+  // imports: [MatSliderModule],
 })
 export class TestComponent {
 

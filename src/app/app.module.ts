@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FakeBackendProvider } from './shared/fake-backend';
+// import { FakeBackendProvider } from './shared/fake-backend';
 import { LoginComponent } from './components/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -25,7 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     HttpClientModule
   ],
-  providers: [FakeBackendProvider],
+  // providers: [FakeBackendProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

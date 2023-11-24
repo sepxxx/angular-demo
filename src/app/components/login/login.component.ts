@@ -3,7 +3,7 @@ import { DemoMaterialModule } from 'src/app/modules/demo-material.module';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatCard, MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
-import { AuthenticateService } from 'src/app/service/authenticate.service';
+import { AuthenticationService } from 'src/app/service/authentication.service';
 
 import {Router, ActivatedRoute} from '@angular/router';
 import { first } from 'rxjs';
@@ -23,7 +23,7 @@ export class LoginComponent {
   // /для использования сервиса нужно его импортнуть в конструкторе
   // activatedRoute чтобы понять откуда пришли
   constructor(private formBuilder: FormBuilder,
-     private authService: AuthenticateService,
+     private authService: AuthenticationService,
      private router: Router,
      private route: ActivatedRoute) {
 

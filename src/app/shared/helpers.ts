@@ -9,5 +9,6 @@ export interface User {
     lastName: string,
     username: string,
     role: Role,
-    jwtToken?: string;
+    accessToken?: string,
+    refreshToken?: string;
 }
