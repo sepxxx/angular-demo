@@ -9,7 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { TestComponent } from './components/test/test.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,6 +23,7 @@ import { TestComponent } from './components/test/test.component';
     BrowserAnimationsModule,
     TestComponent,
     LoginComponent,
+    HttpClientModule
   ],
   providers: [FakeBackendProvider],
   bootstrap: [AppComponent]

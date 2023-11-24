@@ -3,7 +3,7 @@
       <div class="header">
           <h2>Форма авторизации</h2>
       </div>
-      <!-- <form (ngSubmit)="onSubmit()" name="loginForm" [formGroup]="loginForm">
+      <form (ngSubmit)="onSubmit()" name="loginForm" [formGroup]="loginForm">
         <div class="UserIdInput">
           <mat-form-field class="full-width" appearance="outline">
             <mat-label>Логин</mat-label>
@@ -23,10 +23,10 @@
           </mat-form-field>
         </div>
         <button mat-flat-button color="primary" style="border-radius:10px; width : 10em;" >Login</button>
-      </form> -->
-      <div *ngIf="error" class="col alert alert-danger">
-          <!-- {{ error }} -->
-      </div>
+      </form>
+      <!-- <div *ngIf="error" class="col alert alert-danger">
+          {{ error }}
+      </div> -->
       <div class="button-row">
       </div>
     </mat-card-content>

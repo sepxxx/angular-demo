@@ -14,14 +14,14 @@ const routes: Routes = [
     component: TestComponent
 
   },
-  {
-    path: '**',
-    redirectTo: ''
-  },
   // {
-  //   path: '',
-  //   component:
+  //   path: '**',
+  //   redirectTo: ''
   // },
+  {
+    path: '',
+    component: TestComponent
+  },
 
 ];
 
