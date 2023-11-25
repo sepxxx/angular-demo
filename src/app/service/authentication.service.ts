@@ -19,6 +19,9 @@ export class AuthenticationService {
     );
     this.user = this.userSubject.asObservable();
   }
+  public get userValue() {
+    return this.userSubject.value;
+}
 
   login(username: string, password: string) {
     // var formData: FormData = new FormData();
