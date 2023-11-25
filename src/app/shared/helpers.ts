@@ -5,8 +5,8 @@ export enum Role {
 
 export interface User {
     id: number,
-    firstName: String,
-    lastName: String,
+    firstName?: String,
+    lastName?: String,
     username: String,
     role: Role,
     accessToken?: String,

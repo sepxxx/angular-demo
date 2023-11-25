@@ -10,7 +10,11 @@ export class UserService {
     constructor(private http: HttpClient) { }
 
     getAll() {
-        return this.http.get<User[]>(`${environment.apiUrl}/users`);
+        try{
+            return this.http.get<User[]>(`${environment.apiUrl}/users`);
+        } catch(ErrorInterceptor) {
+            return this.http.get<User[]>(`${environment.apiUrl}/users`);
+        }
     }
 
     getById(id: number) {

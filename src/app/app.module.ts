@@ -14,7 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminComponent } from './components/admin/admin.component';
 import { HomeComponent } from './components/home/home.component';
 import { JwtInterceptor } from './shared/jwt-interceptor';
-import {ErrorInterceptor} from './shared/error-interceptor'
+import {ErrorInterceptor} from './shared/error-interceptor';
+import { UsersTableComponent } from './components/users-table/users-table.component'
 
 @NgModule({
   declarations: [
@@ -30,7 +31,9 @@ import {ErrorInterceptor} from './shared/error-interceptor'
     BrowserAnimationsModule,
     // TestComponent,
     LoginComponent,
-    HttpClientModule
+    HttpClientModule,
+    UsersTableComponent,
+
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

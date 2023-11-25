@@ -6,6 +6,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './service/auth-guard.service';
 import { Role } from './shared/helpers';
+import { UsersTableComponent } from './components/users-table/users-table.component';
 
 const routes: Routes = [
     {
@@ -22,6 +23,10 @@ const routes: Routes = [
     {
         path: 'login',
         component: LoginComponent
+    },
+    {
+        path: 'users/table',
+        component: UsersTableComponent
     },
 
     // otherwise redirect to home
