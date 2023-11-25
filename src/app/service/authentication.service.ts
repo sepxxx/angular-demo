@@ -66,4 +66,11 @@ export class AuthenticationService {
     this.userSubject.next(null);
     this.router.navigate(['/login']);
   }
+
+  updateAccessToken(newAcessToken:String) {
+    const updatedUser = this.userValue;
+    updatedUser!.accessToken = newAcessToken;
+    localStorage.setItem('currentUser', JSON.stringify(updatedUser));
+    this.userSubject.next(updatedUser);
+  }
 }
