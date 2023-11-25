@@ -9,7 +9,7 @@ import { LoginComponent } from './components/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
-import { TestComponent } from './components/test/test.component';
+// import { TestComponent } from './components/test/test.component';
 
 import { AdminComponent } from './components/admin/admin.component';
 import { HomeComponent } from './components/home/home.component';
@@ -28,7 +28,7 @@ import {ErrorInterceptor} from './shared/error-interceptor'
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    TestComponent,
+    // TestComponent,
     LoginComponent,
     HttpClientModule
   ],

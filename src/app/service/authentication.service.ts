@@ -5,6 +5,7 @@ import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { User } from '../shared/helpers';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -45,7 +46,7 @@ export class AuthenticationService {
 
     const AuthRequestDto={"username":username, "password":password};
     return this.http
-    .post<any>('http://localhost:8080/auth/login', AuthRequestDto)
+    .post<any>(`${environment.apiUrl}/auth/login`, AuthRequestDto)
     .pipe(
       map((user) => {
         if (!user['accessToken']) {
@@ -63,6 +64,6 @@ export class AuthenticationService {
   logout() {
     localStorage.removeItem('currentUser');
     this.userSubject.next(null);
-    this.router.navigate(['/']);
+    this.router.navigate(['/login']);
   }
 }
