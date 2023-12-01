@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { first } from 'rxjs/operators';
 
 import { User } from '../../shared/helpers';
-import { UserService } from '../../service/user.service';
+import { UserService } from 'src/app/service/user.service';
 
 @Component({ templateUrl: 'admin.component.html' })
 export class AdminComponent implements OnInit {

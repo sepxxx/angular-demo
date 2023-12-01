@@ -28,23 +28,38 @@ export class UsersTableComponent implements OnInit{
 
 
   constructor(private userService: UserService, private cdr:ChangeDetectorRef,private router: Router) {}
-  ngOnInit(): void {
-      // throw new Error('Method not implemented.');
-      this.userService.getAll().subscribe(users => { 
-        this.ELEMENT_DATA=users;
-        this.dataSource = new MatTableDataSource<any> (this.ELEMENT_DATA);
+  // ngOnInit(): void {
+  //     // throw new Error('Method not implemented.');
+  //     this.userService.getAll().subscribe(users => { 
+  //       this.ELEMENT_DATA=users;
+  //       this.dataSource = new MatTableDataSource<any> (this.ELEMENT_DATA);
         
-        console.log(this.ELEMENT_DATA);    
-        this.fillMapWithIds(users);
-        // console.log(ELEMENT_DATA);
-        // this.cdr.detectChanges();
-    });
+  //       console.log(this.ELEMENT_DATA);    
+  //       this.fillMapWithIds(users);
+  //       // console.log(ELEMENT_DATA);
+  //       // this.cdr.detectChanges();
+  //   });
     
-  }
+  // }
 
+  
+  ngOnInit(): void {
+    console.log("INIT")
+    this.userService.currentUsers.subscribe(users=>{
+      if(users) {
+        this.ELEMENT_DATA = users;
+        console.log(this.ELEMENT_DATA);
+        this.dataSource = new MatTableDataSource<any> (this.ELEMENT_DATA);
+      }
+    })
+  }
+  
+  
   // navigateToHome() {
   //   this.router.navigate(['/home']);
   // }
+
+
   fillMapWithIds(users:User[] ) {
     users.forEach(user=> {
       this.detailsMap.set(user.id, false)
