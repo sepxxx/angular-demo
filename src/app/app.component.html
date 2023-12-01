@@ -3,6 +3,7 @@
     <div class="navbar-nav">
         <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
         <a class="nav-item nav-link" routerLink="/admin" routerLinkActive="active" *ngIf="isAdmin">Admin</a>
+        <a class="nav-item nav-link" routerLink="/users/table" routerLinkActive="active" *ngIf="isAdmin">Users table</a>
         <button class="btn btn-link nav-item nav-link" (click)="logout()">Logout</button>
     </div>
 </nav>

@@ -15,15 +15,16 @@ import { AdminComponent } from './components/admin/admin.component';
 import { HomeComponent } from './components/home/home.component';
 import { JwtInterceptor } from './shared/jwt-interceptor';
 import {ErrorInterceptor} from './shared/error-interceptor';
-import { UsersTableComponent } from './components/users-table/users-table.component'
+import { UsersTableComponent } from './components/users-table/users-table.component';
+import { UserInfoButtonComponent } from './components/user-info-button/user-info-button.component';
+import { UserInfoCardComponent } from './components/user-info-card/user-info-card.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminComponent,
     HomeComponent,
-    
-    
+  
   ],
   imports: [
     BrowserModule,
@@ -33,6 +34,8 @@ import { UsersTableComponent } from './components/users-table/users-table.compon
     LoginComponent,
     HttpClientModule,
     UsersTableComponent,
+    UserInfoButtonComponent,
+    UserInfoCardComponent,
 
   ],
   providers: [

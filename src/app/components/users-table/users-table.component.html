@@ -1,3 +1,7 @@
+
+<div class="card mt-4">
+  <h4 class="card-header">Users table</h4>
+  <div class="card-body">
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <!--- Note that these columns can be defined in any order.
@@ -20,10 +24,22 @@
         <th mat-header-cell *matHeaderCellDef> role </th>
         <td mat-cell *matCellDef="let element"> {{element.role}} </td>
         </ng-container>
+
+            <!-- Name Column -->
+    <ng-container matColumnDef="button">
+      <th mat-header-cell *matHeaderCellDef> button </th>
+      <td mat-cell *matCellDef="let element">
+        <!-- <button></button> -->
+        <!-- <button mat-flat-button>Details</button> -->
+          <app-user-info-button [userInButton]="element" (click)="navigateToHome()">  </app-user-info-button>
+
+      </td>
+      </ng-container>
   
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
   
-  
+</div>
+</div>
