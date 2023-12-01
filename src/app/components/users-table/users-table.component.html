@@ -40,9 +40,11 @@
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
 
-      <div *ngFor="let u of ELEMENT_DATA">
-        <app-user-info-card *ngIf="detailsMap.get(u.id)" [userIn]="u">  </app-user-info-card>
+      <div class="d-flex flex-wrap">
+        <div *ngFor="let u of ELEMENT_DATA">
+          <app-user-info-card *ngIf="detailsMap.get(u.id)" [userIn]="u">  </app-user-info-card>
+        </div>
       </div>
-  
+
 </div>
 </div>
