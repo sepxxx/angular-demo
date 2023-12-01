@@ -6,23 +6,24 @@ import {Role} from '../../shared/helpers'
 import {ChangeDetectorRef} from '@angular/core';
 import { UserInfoButtonComponent } from '../user-info-button/user-info-button.component';
 import { Router } from '@angular/router';
-var ELEMENT_DATA: User[] = [
+import { UserInfoCardComponent } from '../user-info-card/user-info-card.component';
 
-];
-
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'users-table',
   styleUrls: ['users-table.component.css'],
   templateUrl: 'users-table.component.html',
   standalone: true,
-  imports: [MatTableModule, UserInfoButtonComponent],
+  imports: [MatTableModule, UserInfoButtonComponent, UserInfoCardComponent, CommonModule],
   
 })
 
 export class UsersTableComponent implements OnInit{
-
+  
+  detailsMap = new Map();
   displayedColumns: string[] = ['id', 'username', 'role', 'button'];
   dataSource: any;
+  ELEMENT_DATA: User[] = [];
   // dataSource = ELEMENT_DATA;
 
 
@@ -30,14 +31,25 @@ export class UsersTableComponent implements OnInit{
   ngOnInit(): void {
       // throw new Error('Method not implemented.');
       this.userService.getAll().subscribe(users => { 
-        // ELEMENT_DATA=users;
-        this.dataSource = new MatTableDataSource<any> (users);
-        console.log(ELEMENT_DATA);
+        this.ELEMENT_DATA=users;
+        this.dataSource = new MatTableDataSource<any> (this.ELEMENT_DATA);
+        
+        console.log(this.ELEMENT_DATA);    
+        this.fillMapWithIds(users);
+        // console.log(ELEMENT_DATA);
         // this.cdr.detectChanges();
     });
+    
   }
 
-  navigateToHome() {
-    this.router.navigate(['/home']);
+  // navigateToHome() {
+  //   this.router.navigate(['/home']);
+  // }
+  fillMapWithIds(users:User[] ) {
+    users.forEach(user=> {
+      this.detailsMap.set(user.id, false)
+      // console.log(user.id, this.detailsMap.get(user.id));
+
+    });
   }
 }
