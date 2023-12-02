@@ -18,6 +18,7 @@ import {ErrorInterceptor} from './shared/error-interceptor';
 import { UsersTableComponent } from './components/users-table/users-table.component';
 import { UserInfoButtonComponent } from './components/user-info-button/user-info-button.component';
 import { UserInfoCardComponent } from './components/user-info-card/user-info-card.component'
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { UserInfoCardComponent } from './components/user-info-card/user-info-car
     UsersTableComponent,
     UserInfoButtonComponent,
     UserInfoCardComponent,
+    FormsModule,
 
   ],
   providers: [

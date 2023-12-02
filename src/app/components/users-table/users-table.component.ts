@@ -21,7 +21,7 @@ import { CommonModule } from '@angular/common';
 export class UsersTableComponent implements OnInit{
   
   detailsMap = new Map();
-  displayedColumns: string[] = ['id', 'username', 'role', 'button'];
+  displayedColumns: string[] = ['id', 'username', 'role','url', 'button'];
   dataSource: any;
   ELEMENT_DATA: User[] = [];
   // dataSource = ELEMENT_DATA;
