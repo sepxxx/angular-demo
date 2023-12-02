@@ -50,10 +50,23 @@ export class UsersTableComponent implements OnInit{
         this.ELEMENT_DATA = users;
         console.log(this.ELEMENT_DATA);
         this.dataSource = new MatTableDataSource<any> (this.ELEMENT_DATA);
+        this.cdr.detectChanges();
+
       }
     })
   }
   
+  // ngOnInit(): void {
+  //   console.log("INIT")
+
+  //     if(this.userService.usersValue) {
+  //       this.ELEMENT_DATA = this.userService.usersValue;
+  //       console.log(this.ELEMENT_DATA);
+  //       this.dataSource = new MatTableDataSource<any> (this.ELEMENT_DATA);
+  //       this.cdr.detectChanges();
+  //     }
+    
+  // }
   
   // navigateToHome() {
   //   this.router.navigate(['/home']);

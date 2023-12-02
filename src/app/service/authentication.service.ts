@@ -68,7 +68,7 @@ export class AuthenticationService {
   }
 
   updateAccessToken(newAcessToken:String) {
-    const updatedUser = this.userValue;
+    var updatedUser = this.userSubject.value;
     console.log("User:" + updatedUser);
     console.log("User old atoken:" + updatedUser?.accessToken);
     updatedUser!.accessToken = newAcessToken;

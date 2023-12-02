@@ -12,7 +12,7 @@ export class JwtInterceptor implements HttpInterceptor {
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> { 
         const user = this.authenticationService.userValue; 
         const isLoggedIn = user && user.accessToken; 
-        // const isRefreshApiUrl = request.url.startsWith(environment.refreshtokenUrl); 
+        const isRefreshApiUrl = request.url.startsWith(environment.refreshAcessTokenUrl); 
         const isApiUrl = request.url.startsWith(environment.apiUrl); 
         // if (isLoggedIn && isRefreshApiUrl) { 
         //     request = request.clone({ 
@@ -22,7 +22,7 @@ export class JwtInterceptor implements HttpInterceptor {
         //     }); 
         // } 
         // if (isLoggedIn && isApiUrl && !isRefreshApiUrl) { 
-        if (isLoggedIn && isApiUrl) { 
+        if (isLoggedIn && isApiUrl && !isRefreshApiUrl) { 
 
             request = request.clone({ 
                 setHeaders: { 
