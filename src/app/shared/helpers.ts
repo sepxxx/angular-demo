@@ -9,7 +9,8 @@ export interface User {
     lastName?: String,
     username: String,
     role: Role,
-    imageUrl: String,
+    // imageUrl: String,
+    imageData: string,
     accessToken?: String,
     refreshToken?: String;
 }

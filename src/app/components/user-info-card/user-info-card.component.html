@@ -5,7 +5,11 @@
       <mat-card-subtitle>Role: {{userIn?.role}}</mat-card-subtitle>
     </mat-card-header>
     <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo"> -->
-    <img mat-card-image [src]="userIn?.imageUrl" alt="Photo">
+    <!-- <img mat-card-image [src]="userIn?.imageUrl" alt="Photo"> -->
+    <div *ngIf="userIn">
+      <img mat-card-image [src]="getSafeImageData(userIn.imageData)" alt="Photo" style="width: 100%; height: auto;">
+    </div>
+ 
     
     <mat-card-content>
       <!-- <p>
@@ -13,10 +17,14 @@
         A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
         bred for hunting.
       </p> -->
-      <div>
+      <!-- <div>
         <label for="urlInput">URL:</label>
         <input type="text" id="urlInput" [(ngModel)]="urlValue" />
         <button (click)="readUrl()">Прочитать URL</button>
+      </div> -->
+      <div>
+        <input type="file" (change)="onFileSelected($event)">
+        <button (click)="onUpload()">Upload</button>
       </div>
     </mat-card-content>
     <!-- <mat-card-actions>

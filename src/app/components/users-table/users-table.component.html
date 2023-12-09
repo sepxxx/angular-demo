@@ -26,9 +26,9 @@
           </ng-container>
 
         <!-- Name Column -->
-      <ng-container matColumnDef="url">
-        <th mat-header-cell *matHeaderCellDef> url </th>
-        <td mat-cell *matCellDef="let element"> {{element.imageUrl}} </td>
+      <ng-container matColumnDef="imageData">
+        <th mat-header-cell *matHeaderCellDef> imageData </th>
+        <td mat-cell *matCellDef="let element"> {{element.imageData.slice(0, 50)}} </td>
       </ng-container>
 
               <!-- Name Column -->
