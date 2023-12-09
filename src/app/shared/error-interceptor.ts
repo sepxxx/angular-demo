@@ -62,19 +62,9 @@ export class ErrorInterceptor implements HttpInterceptor {
             console.log(err.status)
             if ([401, 403].includes(err.status) && this.authenticationService.userValue) {
                 console.log("МЫ БУДЕМ ПЕРЕЗАПРАШИВАТЬ ACESS")
-                const user  = this.authenticationService.userValue
+                // const user  = this.authenticationService.userValue
+                this.authenticationService.updateAccessToken();
 
-                
-                this.http.post<String>(environment.refreshAcessTokenUrl,
-                 {"refreshToken": user.refreshToken})
-                 .subscribe(token => {
-                        // this.newAccessToken = token;
-                        //теперь его нужно переопределить у юзера
-                        //обновим и в local storage и в самом проекте
-                        console.log("МЫ ПОЛУЧИЛИ ТОКЕН " + token + " И СЕЙЧАС ЕГО ПОМЕНЯЕМ")
-                        this.authenticationService.updateAccessToken(token);
-                    }
-                 )
             }
         
             return throwError(() => error);

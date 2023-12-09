@@ -67,15 +67,30 @@ export class AuthenticationService {
     this.router.navigate(['/login']);
   }
 
-  updateAccessToken(newAcessToken:String) {
-    var updatedUser = this.userSubject.value;
-    console.log("User:" + updatedUser);
-    console.log("User old atoken:" + updatedUser?.accessToken);
-    updatedUser!.accessToken = newAcessToken;
-    console.log("User new atoken:" + updatedUser?.accessToken);
-    
-    localStorage.setItem('currentUser', JSON.stringify(updatedUser));
-    this.userSubject.next(updatedUser);
+  updateAccessToken() {
+    // var updatedUser = this.userSubject.value;
+    // console.log("updateAccessToken function")
+    // if(updatedUser) {
+    //   this.http.post<String>(environment.refreshAcessTokenUrl,
+    //     {"refreshToken": updatedUser.refreshToken})
+    //     .subscribe(token => {
+    //           // this.newAccessToken = token;
+    //           //теперь его нужно переопределить у юзера
+    //           //обновим и в local storage и в самом проекте
+    //           console.log("МЫ ПОЛУЧИЛИ ТОКЕН " + token + " И СЕЙЧАС ЕГО ПОМЕНЯЕМ")
+
+    //           console.log("User:" + updatedUser);
+    //           console.log("User old atoken:" + updatedUser?.accessToken);
+    //           updatedUser!.accessToken = token;
+    //           console.log("User new atoken:" + updatedUser?.accessToken);
+              
+    //           localStorage.setItem('currentUser', JSON.stringify(updatedUser));
+    //           this.userSubject.next(updatedUser);
+    //       },
+    //       error=> {console.log("ОШИБОЧКА")}
+    //     )
+
+    // }
     
   }
 }
